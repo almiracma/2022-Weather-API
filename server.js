@@ -42,5 +42,26 @@ const server = app.listen(port, () => {
 // Initialize all route with a callback function
 
 // Callback function to complete GET '/all'
+app.get("/all", getData);
+
+function getData(req, res) {
+  res.send(projectData);
+}
 
 // Post Route
+app.post("/addData", addData);
+
+function addData(req, res) {
+  let data = req.body;
+  newEntry = {
+    temp: data.temp,
+    date: data.date,
+    content: data.content,
+  };
+
+  projectData = newEntry;
+  res.send(projectData);
+  console.log(projectData);
+
+  //   projectData.push(temp, date, feelings);
+}

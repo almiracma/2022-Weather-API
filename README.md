@@ -18,3 +18,8 @@ app.use(bodyParser.json());
 app.use(express.static('website'));
 
 // Setup Server
+
+//This project has made me debug every possible way for two days only
+// to realize that I wasn't actually restarting my server
+// everytime I make changes to my code.
+// This is such a lesson learned I will NEVER forget.
